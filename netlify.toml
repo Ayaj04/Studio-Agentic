@@ -1,0 +1,3 @@
+[build]
+  command = "pnpm --filter @workspace/studio-agentic... run build"
+  publish = "artifacts/studio-agentic/.next"
