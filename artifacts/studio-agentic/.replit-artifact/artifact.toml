@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Studio Agentic"
+description = "A premium landing page for Studio Agentic, helping founders improve workflows, deploy AI capabilities, and build more investable, sustainable businesses."
+version = "1.0.0"
+id = "artifacts/studio-agentic"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18128
+
+[services.development]
+run = "pnpm --filter @workspace/studio-agentic run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studio-agentic", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studio-agentic/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18128"
+BASE_PATH = "/"
