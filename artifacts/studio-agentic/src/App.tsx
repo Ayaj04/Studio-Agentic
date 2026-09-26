@@ -67,25 +67,28 @@ function Logo({ light = false }: { light?: boolean }) {
 }
 
 function AgentField() {
-  const nodes = [
-    { x: '11%', y: '37%', label: 'context' },
-    { x: '33%', y: '20%', label: 'signal' },
-    { x: '39%', y: '68%', label: 'people' },
-    { x: '63%', y: '35%', label: 'agents' },
-    { x: '84%', y: '58%', label: 'decision' },
-  ];
   return (
-    <div className="agent-field" aria-label="A diagram showing context moving through signals and agents toward a decision">
+    <div className="agent-field" aria-label="Your context, combined with people and AI, leads to clear decisions">
       <div className="field-grid" />
       <div className="field-crosshair crosshair-one" /><div className="field-crosshair crosshair-two" />
-      <svg className="field-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M11 37 C21 36 23 23 33 20 S53 28 63 35 S75 51 84 58" />
-        <path d="M11 37 C19 51 28 69 39 68 S52 47 63 35" />
-        <path d="M39 68 C53 80 70 75 84 58" />
-      </svg>
-      {nodes.map((node, index) => <div className={`agent-node node-${index + 1}`} style={{ left: node.x, top: node.y }} key={node.label}><span className="node-dot" /><span className="node-label">{node.label}</span></div>)}
-      <div className="field-readout"><span className="pulse-dot" /> orchestration / live</div>
-      <div className="field-caption">01 — the invisible work<br /><strong>made visible</strong></div>
+      <div className="field-readout"><span className="pulse-dot" /> how it works / 3 steps</div>
+      <div className="signal-stack">
+        <div className="signal-stage">
+          <span className="stage-index">01</span>
+          <div><span className="stage-kicker">Start with</span><strong>Your context</strong></div>
+          <span className="stage-meta">Your goals, knowledge and constraints</span>
+        </div>
+        <div className="signal-stage signal-stage-active">
+          <span className="stage-index">02</span>
+          <div><span className="stage-kicker">Work together</span><strong>People + AI</strong></div>
+          <span className="stage-meta">Human judgment with intelligent support</span>
+        </div>
+        <div className="signal-stage">
+          <span className="stage-index">03</span>
+          <div><span className="stage-kicker">Move forward</span><strong>Clear decisions</strong></div>
+          <span className="stage-meta">Know what to do next</span>
+        </div>
+      </div>
     </div>
   );
 }
