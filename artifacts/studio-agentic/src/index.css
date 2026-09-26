@@ -516,10 +516,10 @@ button { cursor: pointer; }
 .section-kicker span:first-child { color: var(--ink); }.kicker-rule { flex: 1; height: 1px; background: var(--line); margin-left: 9px; }
 .manifesto-kicker { gap: 14px; font-size: 14px; font-weight: 600; letter-spacing: .1em; }
 .manifesto-kicker span:first-child { font-size: 12px; }
-.manifesto-kicker span:last-child { padding: 9px 13px 8px; background: var(--coral); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.section-kicker.manifesto-kicker > span:first-child { padding: 9px 13px 8px; background: var(--coral); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
 .products-kicker { gap: 14px; font-size: 14px; font-weight: 600; letter-spacing: .1em; }
 .products-kicker span:first-child { font-size: 12px; }
-.products-kicker span:last-child { padding: 9px 13px 8px; background: var(--coral); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.section-kicker.products-kicker > span:first-child { padding: 9px 13px 8px; background: var(--coral); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
 .manifesto-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 13vw; align-items: end; }
 .display-title { font-size: clamp(42px, 5.35vw, 82px); line-height: .95; margin: 0; }
 .display-title span { color: var(--coral); }
