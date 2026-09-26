@@ -9,6 +9,7 @@ function normalizeBasePath(value: string | undefined): string | undefined {
 const basePath = normalizeBasePath(process.env.BASE_PATH);
 
 const nextConfig: NextConfig = {
+  output: 'export',
   ...(basePath ? { basePath } : {}),
 };
 
